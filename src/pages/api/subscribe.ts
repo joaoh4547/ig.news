@@ -26,7 +26,7 @@ const Subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
             cancel_url: process.env.STRIPE_CANCEL_URL,
         });
 
-        return res.status(200).json({ session: checkoutSession.id });
+        return res.status(200).json({ sessionId: checkoutSession.id });
     } else {
         res.setHeader("Allow", "POST");
         res.status(405).end("method not allowed ");
